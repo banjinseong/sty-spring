@@ -1,0 +1,34 @@
+package com.inhatc.cs;
+
+import javax.inject.Inject;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+
+import com.inhatc.domain.SubjectRecordVO;
+import com.inhatc.persistence.SubjectRecordDAO;
+
+@WebAppConfiguration
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(
+			locations = {"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"}
+		)
+public class RecordDAOTest2 {
+
+	@Inject
+	SubjectRecordDAO dao;
+	
+	@Test
+	public void test1() throws Exception{
+		System.out.println("----------test------------");
+		SubjectRecordVO vo = dao.selectRecord("id1");
+		System.out.println(vo.getEng());
+		System.out.println(vo.getKor());
+		System.out.println(vo.getMath());
+		System.out.println("----------------------");
+	}
+	
+}

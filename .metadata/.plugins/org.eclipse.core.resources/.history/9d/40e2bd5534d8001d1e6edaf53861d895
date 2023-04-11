@@ -1,0 +1,5 @@
+package com.inhatc.persistence;
+
+public interface SubjectRecordDAO {
+	public void 
+}
