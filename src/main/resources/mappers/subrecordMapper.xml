@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inhatc.mapper.subMapper">
+	<insert id="insertRecord">
+		insert into tbl_sbjrecord 
+		value(#{id}, #{kor}, #{eng}, #{math})
+	</insert>
+	
+	<select id="selectRecord" resultType="com.inhatc.domain.SubjectRecordVO">
+		select * from tbl_sbjrecord
+		where id = #{id}
+	</select>
+	
+	<update id="updateRecord">
+		update tbl_sbjrecord set kor = #{kor}, eng =#{eng}
+		where id = #{id}
+	</update>
+	
+	<delete id="deleteRecord">
+		delete from tbl_sbjrecord
+		where id = #{id}
+	</delete>
+	
+</mapper>

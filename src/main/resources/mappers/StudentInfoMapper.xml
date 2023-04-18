@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inhatc.mapper.infoMapper">
+	<insert id="insertRecord">
+		insert into tbl_studentinfo 
+		value(#{userid}, #{username}, #{dept}, #{juso}, #{phone}, #{email})
+	</insert>
+	
+	<select id="selectRecord" resultType="com.inhatc.domain.StudentinfoVO">
+		select * from tbl_studentinfo
+		where dept = #{dept}
+	</select>
+
+	<update id="updateRecord">
+		update tbl_studentinfo set username = #{username}, email = #{email}
+		where userid = #{userid}
+	</update>
+	
+	<delete id="deleteRecord">
+		delete from tbl_studentinfo
+		where userid = #{userid}
+	</delete>
+	
+	<select id="listAll" resultType="com.inhatc.domain.StudentinfoVO">
+	<!-- 파라미터 안넘어오면 아래처럼 묶는게 성능 향상에 도움이 된다. -->
+	<![CDATA[
+		select *
+		from tbl_studentinfo
+		order by userid asc
+		]]>
+	</select>
+</mapper>
