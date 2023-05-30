@@ -24,4 +24,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where id = #{id}
 	</delete>
 	
+	<select id="listAll" resultType="com.inhatc.domain.SubjectRecordVO">
+	<!-- 파라미터 안넘어오면 아래처럼 묶는게 성능 향상에 도움이 된다. -->
+	<![CDATA[
+		select *
+		from tbl_sbjrecord
+		order by id asc
+		]]>
+	</select>
+	
 </mapper>

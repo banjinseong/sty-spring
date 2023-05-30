@@ -1,10 +1,13 @@
 package com.inhatc.persistence;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.inhatc.domain.LabmasterVO;
 import com.inhatc.domain.SubjectRecordVO;
 @Repository
 public class SubjectRecordDAOImpl implements SubjectRecordDAO{
@@ -35,6 +38,11 @@ public class SubjectRecordDAOImpl implements SubjectRecordDAO{
 	public void deleteRecord(String id) {
 		sqlSession.delete(namespace + ".deleteRecord", id);
 		
+	}
+	
+	@Override
+	public List<SubjectRecordVO> listAll() throws Exception {
+		return sqlSession.selectList(namespace + ".listAll");
 	}
 
 }

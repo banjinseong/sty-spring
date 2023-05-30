@@ -32,7 +32,7 @@ public class InfoDAOTest5 {
 		int size = listMember.size();
 		System.out.println("size: "+ size);
 		for(int i=0; i<size; i++) {
-			System.out.println("------------"+i+"번째 목록-------------");
+			System.out.printf("------------%d번째 목록-------------\n",i+1);
 			System.out.println("userid: "+ listMember.get(i).getUserid());
 			System.out.println("username: "+ listMember.get(i).getUsername());
 			System.out.println("useremail: "+ listMember.get(i).getEmail());

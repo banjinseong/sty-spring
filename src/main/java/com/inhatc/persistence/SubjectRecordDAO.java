@@ -1,5 +1,7 @@
 package com.inhatc.persistence;
 
+import java.util.List;
+
 import com.inhatc.domain.SubjectRecordVO;
 
 public interface SubjectRecordDAO {
@@ -12,5 +14,5 @@ public interface SubjectRecordDAO {
 	//ªË¡¶
 	public void deleteRecord(String id);
 
-
+	public List<SubjectRecordVO> listAll() throws Exception;
 }

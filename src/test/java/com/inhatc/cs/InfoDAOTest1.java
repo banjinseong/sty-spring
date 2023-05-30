@@ -26,7 +26,7 @@ public class InfoDAOTest1 {
 	@Test
 	public void test1() throws Exception{
 		StudentinfoVO vo = new StudentinfoVO();
-		vo.setUserid("i2d3");
+		vo.setUserid("i2fdfdd3");
 		vo.setUsername("name");
 		vo.setDept(1);
 		vo.setJuso("¿Œ√µ");
